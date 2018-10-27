@@ -1,65 +1,84 @@
 article{
     padding-left:10%;
-    padding-right:10%;
+    padding-right: 10%;
+    font-family: 'consolas', courier;
 }
-header{
-    
-    height: 80px;
-    width: auto;
 
+h1 {
+    font-size: 70px;
+    font-family: "PT sans";
+    margin-top: 10%;
+}
+
+#logo {
+    float:left;
+    padding-left: 10%;
+    margin-right:15px;
+    margin-top: 10px;   
+    width: 50px;
+    height:50px;
+}
+
+hr{
+    width: 3ex;
+    margin-top:5%;
+    margin-bottom: 5%;
+    border-top: 3px dashed;
+}
+
+header{
+    height: 60px;
     background-color: #333333;
     text-align: right;
-    
-    margin:0;
-    padding-left:0;
-    }
-a{
-    display:inline-block;
-    margin-top: 25px;
-    padding-left:50px;
-    margin-right:25px;
+    overflow:hidden;
+    padding: 10px 10px;
+}
+
+a {
     color:#ff0099;
-   
-      
+    font-size:20px;
 }
-img{
-   display:inline-block;
-   float:left;
-    margin-top:25px;
-    margin-left:25px;
-    padding-left: 150px;
-    
+
+nav{
+    padding-right:10%;
 }
-h1{
-    font-size: 70px;
-    margin-top: 200px;
-    margin-bottom: 40px;
-    font-family: "PT sans";
+
+ul{
+    margin-top: 25px;
+    margin-right:25px;
+    word-spacing: 50px;
 }
-sub{
+
+li{
+    display: inline;
+}
+
+sub {
     font-size:40px;
     color: #ff0099;
     font-style: bold;
-}
-p{ font-size: 25px;
+    }
+
+#introduction {
+    font-size: 25px;
     font-family:'Open Sans Condensed';
     font-style: bold;
-
+    word-spacing: 5px;
 }
+
 h2{
     font-size:60px;
     text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
-h3{
-    font-size: 40px;
 
+h3{
+    font-style: bold;
+    font-size:25px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
 }
-ul{
-    font-size: 30px;
-    list-style: none;
+
+p{
+    font-size:25px;
 }
-hr{
-    border-top: dashed;
-    width: 3ex;
-    
-}  
