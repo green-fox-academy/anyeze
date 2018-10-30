@@ -4,4 +4,4 @@ function sum(num){
         number+=i;
         } return number;}
 
-    console.log(sum(10));
+    console.log(sum(20));
