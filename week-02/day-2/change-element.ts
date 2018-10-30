@@ -4,7 +4,7 @@
 
 let numList: number[]= [1, 2, 3, 8, 5, 6];
 
-let list=numList.map(e =>{
+let newList=numList.map(e =>{
     if (e === 8){
         return 4;
     }else{ 
@@ -13,7 +13,7 @@ let list=numList.map(e =>{
 });
 
 
-console.log(list);
+console.log(newList);
 
 
 
