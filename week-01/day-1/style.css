@@ -20,10 +20,11 @@ h1 {
 }
 
 hr{
-    width: 3ex;
-    margin-top:5%;
+    width: 1.5em;
+    margin-top: 5%;
     margin-bottom: 5%;
     border-top: 3px dashed;
+    background-image: src="greenfox.png" ;
 }
 
 header{
