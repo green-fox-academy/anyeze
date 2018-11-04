@@ -1,12 +1,19 @@
 'use strict';
 
+// Write a program that draws a triangle like this:
+//
+// *
+// **
+// ***
+// ****
+//
+// The triangle should have as many lines as lineCount is
+
+
 let lineCount: number = 4;
-let output1: string='*';
-let output2: string='*';
+let outPut: string= "*";
 
-for(let i: number=0; i < lineCount; i++){
-    console.log(output1);
-    output1=output1 + output2;
+for(let i: number = 1; i <= lineCount; i++){
+console.log(outPut.repeat(i))
+    
 };
-
-
