@@ -11,7 +11,7 @@
 //      - Diablo
 
 let todoText: string = ' - Buy milk\n';
-let todo2: string = '     - Diablo\n'
-todoText = "My todo:\n" + todoText + " - Download games\n" + todo2;
+let todo2: string = '- Diablo\n'
+todoText = "My todo:\n" + todoText + " - Download games\n\t" + todo2;
 
 console.log(todoText);
