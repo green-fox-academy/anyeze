@@ -10,11 +10,11 @@ let shopItems: any [] = ['Cupcake', 2, 'Brownie', false];
 // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
 
 function sweets(list: any [] ){
-
+       
     list.splice(1, 1, "Croissant" );
     list.splice(3, 1, "Ice cream");
    return list;
-   
+
 }
 
 
