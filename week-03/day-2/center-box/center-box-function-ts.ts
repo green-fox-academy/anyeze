@@ -21,7 +21,7 @@ function drawSquare(xy){
 for(let i = 0; i <= 3; i++){
 
     ctx.strokeStyle = `rgb(129, 0, ${(255/3) * i}`;
-   drawSquare(100*i);
+   drawSquare(i*100);
 
 
 };
