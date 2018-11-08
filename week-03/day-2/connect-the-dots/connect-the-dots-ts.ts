@@ -12,6 +12,35 @@ const ctx = canvas.getContext('2d');
 // Connect these: [[50, 100], [70, 70], [80, 90], [90, 90], [100, 70],
 // [120, 100], [85, 130], [50, 100]]
 
-let box = [[10, 10], [290,  10], [290, 290], [10, 290]];
-let lines = [[50, 100], [70, 70], [80, 90], [90, 90], [100, 70],[120, 100], [85, 130], [50, 100]]
+let box: number [][] = [[10, 10],
+                        [290,  10],
+                        [290, 290], 
+                        [10, 290]];
+
+let lines: number [][]= [[50, 100],
+                        [70, 70], 
+                        [80, 90], 
+                        [90, 90], 
+                        [100, 70],
+                        [120, 100], 
+                        [85, 130], 
+                        [50, 100]]
+
+function drawLines(array: number [] []){
+
+    for(let i = 0; i < array.length; i++){
+        
+        ctx.strokeStyle = "green";
+        ctx.beginPath();
+        ctx.moveTo(array[i][0],array[i][1]);
+        ctx.lineTo(array[i+1][0],array[i+1][1]);
+        ctx.stroke();
+
+    }
+}
+
+drawLines(lines); 
+drawLines(box);
+
+
 
