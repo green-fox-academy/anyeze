@@ -5,24 +5,16 @@
 
 let listOfNumbers: number[] = [2, 4, 6, 8, 10, 12, 14, 16];
 
-function checkNums(array: number []){
+function checkNums(array: number[]) {
 
-    let list = [4,8,12,16];
+    let list = [4, 9, 12, 16];
 
-    for(let i = 0; i< listOfNumbers.length; i++){
+    for (let i = 0; i < listOfNumbers.length; i++) {
+
+        if (listOfNumbers.includes(list[i])) 
     
-       
 
-        if(listOfNumbers.includes(list[i])){
-
-                return true;
-
-        }else{
-
-                return false;
-        } 
-} return checkNums; }
 
 console.log(checkNums(listOfNumbers));
 
-export = checkNums;
+export = checkNums
