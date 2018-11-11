@@ -13,3 +13,29 @@ const students: any[] = [
 
 // create a function that takes a list of students and logs: 
 //  - how many candies they have on average
+
+function whoHasmore(list: any){
+
+    let moreCandies = [];
+    for(let i = 0; i < list.length; i++){
+            if(list[i].candies > 4){
+
+            moreCandies.push(list[i].name);
+        }
+        
+    }return moreCandies;
+}
+console.log(whoHasmore(students));
+
+
+function averageCandies(list: any){
+        let candy= 0;
+        for(let i = 0; i< list.length; i++){
+
+            candy = (candy+list[i].candies);
+        }
+return candy/list.length;
+
+}
+
+console.log(averageCandies(students));
