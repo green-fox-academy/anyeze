@@ -20,23 +20,6 @@
 const args = process.argv.splice(2); // Just a helper for you to get started
 
 
-        switch (args[0]){
-
-            case '+':
-                console.log((args[1] + + args[2]), "Goodbye");
-                break;
-            case '-': 
-                console.log( (args[1] - - args[2]), "Goodbye");
-                break;
-            default: console.log( " More arguments required or invalid input");
-            
-            
-            }
-
-
-
-
-}
 
 
 console.log('Input params are', args);
