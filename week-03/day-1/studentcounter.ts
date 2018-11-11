@@ -14,3 +14,28 @@ const students: any[] = [
 
 // create a function that takes a list of students and logs:
 // - Sum of the age of people who have lass than 5 candies
+
+function candies(list: any){
+
+    let allCandies = 0;
+        for( let i=0; i < list.length; i++){
+            allCandies=allCandies+list[i].candies;
+        }
+        return allCandies;
+}
+
+
+console.log(candies(students));
+
+function sumAge(list:any){
+    let ages = 0;
+
+    for(let i = 0; i < list.length; i++){
+        if(list[i].candies<5){
+            ages=ages+list[i].age;
+        }
+    }
+return ages;
+}
+
+console.log(sumAge(students));
