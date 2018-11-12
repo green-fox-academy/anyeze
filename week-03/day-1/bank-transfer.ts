@@ -37,26 +37,31 @@ console.log(getNameAndBalance(23456311));
 //
 // Log "404 - account not found" if any of the account numbers don't exist to the console.
 
-function transferAmount(accounts: any, fromAccountNumber: number [], toAccountNumber: number [], amount: number [] ): any{
 
-    let transfer: number [] = 0;
 
-    for(let i = 0; i < accounts.length; i++){
+// not finished yet
+function transferAmount(acc: any, fromAccountNumber: number , toAccountNumber: number, amount: number  ): any{
+    
+    let transferTo: any [] = acc.find(function(element){
+        return element.accountNumber === fromAccountNumber;
+    });
+    let transferFrom: any[] = acc.find(function(element){
+        return element.accountNumber === toAccountNumber;
+    });
 
-        if(accounts[i].accountNumber === toAccountNumber){
+    if(transferTo === toAccountNumber){
 
-            accounts[i].balance = accounts[i].balance + + amount;
-            transfer.push(accounts[i].accountNumber)
-
-        }else if(accounts[i].accountNumber === fromAccountNumber){
-            accounts[i].balance = accounts[i].balance - - amount;
-            transfer.push(accounts[i].accountNumber)
             
-        }else {
+
+    }else if(transferFrom === fromAccountNumber){
+
+       
+           
+    }else {
             console.log("404 - account not found");
         }
 
-return transfer;
+return accounts;
 
     };
 
