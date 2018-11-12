@@ -2,4 +2,3 @@ hello
 szia 
 holnap 
 mas
-
