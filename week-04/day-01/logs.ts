@@ -2,16 +2,14 @@
 // Each line represents a log message from a web server
 // Write a function that returns an array with the unique IP adresses.
 // Write a function that returns the GET / POST request ratio.
-export{};
+export { };
 const fs = require('fs');
 
 
 function readAfile(fileName: string) {
 
     try {
-
         return fs.readFileSync(fileName, 'utf-8');
-
     } catch (e) {
         console.log('Unable to read file: my-file.txt');
         return null;
@@ -20,21 +18,40 @@ function readAfile(fileName: string) {
 
 function uniqueIp(fileName: string) {
 
-    let fileContent: string = readAfile("logs.txt");
-    let lines: any[] = fileContent.split('\r\n');
+    let fileContent: string = readAfile(fileName);
+    let lines: string[] = fileContent.split('\r\n');
+    let result: any[] = [];
+    let ipAdresses: string[] = [];
 
-    let ipAdresses: any[] = [];
-    let result: string[] = [];
+
 
     for (let i = 0; i < lines.length; i++) {
 
-        ipAdresses.push(lines[i].split(" "));
-        
-        result.push(ipAdresses[i][9]);
+        result.push(lines[i].split("   "));
+        ipAdresses.push(result[i][1]);
+    }
 
-    } 
+    let uniqueIpResult = ([... new Set(ipAdresses)]);
+    return uniqueIpResult;
 
-    console.log(result);
-    return result;
 }
 console.log(uniqueIp("logs.txt"));
+
+function ratio(fileName: string) {
+
+    let fileContent: string = fs.readFileSync(fileName, "utf-8").split("\n");
+    let getCount: number = 0;
+    let postCount: number = 0;
+
+    for (let i = 0; i < fileContent.length; i++) {
+        if (fileContent[i].includes('GET /')) {
+            getCount += 1;
+        } else if (fileContent[i].includes('POST /')) {
+            postCount += 1;
+        }
+
+    }
+    return "The GET / POST ratio is:  1 : " + postCount / getCount;
+}
+
+console.log(ratio('logs.txt'));
