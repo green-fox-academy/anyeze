@@ -1,10 +1,12 @@
-class Animal {
+export class Animal {
     hunger: number;
     thirst: number;
+    name: string;
 
-    constructor(hunger: number = 50, thirst: number = 50) {
+    constructor(name: string = "nonamedyet",hunger: number = 50, thirst: number = 50) {
         this.hunger = Math.round(hunger);
         this.thirst = Math.round(thirst);
+        this.name = name;
     }
 
     public eat() {
@@ -16,11 +18,4 @@ class Animal {
     public play() {
         this.thirst -= 1;
         this.hunger -= 1;
-    }
-
-}
-let a1 = new Animal(55.4,29.4);
-
-a1.play();
-
-console.log(a1);
+    }}
