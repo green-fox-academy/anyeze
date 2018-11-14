@@ -10,44 +10,43 @@ import { Animal } from "./animal";
 
 class Farm {
 
-    listOfAnimals:  Animal[]=[];
-    availableSlots: number = 0;
+    listOfAnimals: Animal[] = [];
+    availableSlots: number = 1;
 
-    breed(){
-        if(this.availableSlots !== 0){
+    breed(): void {
+
+        if (this.availableSlots > 0) {
 
             this.listOfAnimals.push(new Animal());
             this.availableSlots--;
-        }else{
+        } else {
             console.log("Every slot is taken")
         }
     }
 
-    slaughter(){
-  
-        for(let i=0; i< this.listOfAnimals[i].hunger; i++){
-        
-            if(this.listOfAnimals[i].hunger < 55){
-                this.listOfAnimals.splice(i,1);
-            }
-        }
+    slaughter(): void {
+        this.listOfAnimals.sort(function (a: Animal, b: Animal) {
+            return b.hunger - a.hunger;
+        })
+        this.listOfAnimals.splice(0, 1);
+        this.availableSlots++;
     }
 
-    addAnimal(newAnimal: Animal){
+    addAnimal(newAnimal: Animal) {
 
         this.listOfAnimals.push(newAnimal);
 
     }
 
-    }
+}
 
 function initializeAnimals(): Animal[] {
 
     return [
-        new Animal("tyúkocska",55,30),
-        new Animal("libácska",52,24),
-        new Animal("disznócska",78,64),
-        new Animal("marhácska",77,24)
+        new Animal("tyúkocska", 55, 30),
+        new Animal("libácska", 52, 24),
+        new Animal("disznócska", 78, 64),
+        new Animal("marhácska", 77, 24)
     ]
 }
 
@@ -61,6 +60,15 @@ for (let i = 0; i < initializeAnimals().length; i++) {
 
 console.log(listOfAnimals);
 console.log("**************************");
+
 listOfAnimals.breed();
 console.log(listOfAnimals);
+
 console.log("**************************");
+listOfAnimals.breed();
+console.log(listOfAnimals);
+
+console.log("**************************");
+listOfAnimals.slaughter();
+console.log(listOfAnimals);
+

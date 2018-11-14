@@ -3,7 +3,7 @@ export class Animal {
     thirst: number;
     name: string;
 
-    constructor(name: string = "nonamedyet",hunger: number = 50, thirst: number = 50) {
+    constructor(name: string = "állatka",hunger: number = 50, thirst: number = 50) {
         this.hunger = Math.round(hunger);
         this.thirst = Math.round(thirst);
         this.name = name;
