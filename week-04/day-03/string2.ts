@@ -13,6 +13,6 @@ function change2(str: string){
     }
 
 }
-let exampleString = " xoxoxoxoxoxoxo yoyoyoyoyoyoyoyoyoyo "
+let exampleString2 = " xoxoxoxoxoxoxo yoyoyoyoyoyoyoyoyoyo "
 
-console.log(change2(exampleString));
+console.log(change2(exampleString2));
