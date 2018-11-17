@@ -23,15 +23,15 @@ function deleteDoubled(fileName: string) {
   })
   return minusDoubled.join('');
 
-
-  /*for (let i = 0; i <= lines.length; i++) {
+  //first solution:
+  /*for (let i = 0; i <= fileContent.length; i++) {
 
     if (i % 2 !== 0) {
-      minusDoubled.push(lines[i]);
+      minusDoubled.push(fileContent[i]);
     }
-    return minusDoubled.join('');
+   
+  } return minusDoubled.join('');*/
 
-  }*/
 }
 console.log(deleteDoubled("duplicated-chars.txt"));
 
