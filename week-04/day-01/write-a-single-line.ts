@@ -10,7 +10,9 @@ const fs = require('fs');
 function writeAline(fileName: string, data: string){
     
     if(fs.existsSync(fileName)){
-        return fs.appendFileSync(fileName, data);
+
+    return fs.appendFileSync(fileName, data);
+    
     }else{
         console.log('Unable to write file: my-file.txt');
     }
