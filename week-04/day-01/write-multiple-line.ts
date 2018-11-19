@@ -6,7 +6,7 @@
 // So if the word is 'apple' and the number is 5, than it should write 5 lines
 // to the file and each line should be 'apple'
 // The function should not raise any error if it could not write the file.
-
+export {};
 const fs = require('fs');
 
 function writeMultipleLines(fileLocation: string, toBeWritten: string, lineCount: number) {
@@ -19,4 +19,4 @@ function writeMultipleLines(fileLocation: string, toBeWritten: string, lineCount
 
     fs.appendFileSync(fileLocation, array2);
 }
-writeMultipleLines('my-file.txt', 'apple', 5)
+writeMultipleLines('my-file.txt', 'apple', 5);
