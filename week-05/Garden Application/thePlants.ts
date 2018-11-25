@@ -3,32 +3,20 @@ import { Flower } from "./theFlower";
 import { Garden } from "./theGarden";
 
 
-class Plant extends Garden {
-
-    protected type: string;
+class Plant {
     protected color: string;
-    protected waterCurrAmount: number;
-
-    constructor(color: string, waterCurrAmount: number, type: string) {
-
-        this.plants = plants;
+    waterCurrAmount: number;
+    waterAbsorb: number;
+    constructor(color: string) {
         this.color = color;
-        this.waterCurrAmount = waterCurrAmount;
-        this.type = type;
-
+        this.waterCurrAmount = 0;
     }
-
-    watering(waterUnit: number) {
-        this.waterCurrAmount += waterUnit;
+    needWater(): boolean {
+        return this.waterCurrAmount === 0;
     }
-
-    getColor() {
+    getColor(): string {
         return this.color;
     }
-
-    getType() {
-        return this.type;
-    }
-}
+};
 
 export { Plant };
