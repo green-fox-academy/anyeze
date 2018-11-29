@@ -4,7 +4,7 @@ Create a test for that.*/
 
 
 
-function countLetters(words: string) {
+/*function countLetters(words: string) {
 
     let result = {};
     words.split(" ").forEach(function (e) {
@@ -18,8 +18,22 @@ function countLetters(words: string) {
         });
     });
     return result;
+}*/
+
+function countLetters(words: string) {
+    let splitWord: string[] = words.toLowerCase().split('');
+    let result = {};
+
+    splitWord.forEach(element => {
+        if (element in result) {
+            result[element]++;
+        } else if (element !== ' ') {
+            result[element] = 1;
+        }
+    });
+    return result;
 }
 
-
+console.log(countLetters('almafácskadejófácska'));
 
 export { countLetters }
