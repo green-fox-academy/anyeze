@@ -7,9 +7,7 @@ let string3 = "Abc";
 let string4 = "aBc";
 
 test('test anagram', t => {
-    let actual = anagram(string1, string2);
-    let expected = true;
-    t.equal(actual, expected);
+    t.ok(anagram(string1, string2))
     t.end();
 });
 
@@ -19,4 +17,4 @@ test('test anagram with  capital letters', t =>{
     let expected = true;
     t.equal(actual, expected);
     t.end();
-})
+});

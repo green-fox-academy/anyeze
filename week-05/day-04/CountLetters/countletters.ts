@@ -24,11 +24,11 @@ function countLetters(words: string) {
     let splitWord: string[] = words.toLowerCase().split('');
     let result = {};
 
-    splitWord.forEach(element => {
-        if (element in result) {
-            result[element]++;
-        } else if (element !== ' ') {
-            result[element] = 1;
+    splitWord.forEach(char => {
+        if (char in result) {
+            result[char]++;
+        } else if (char !== ' ') {
+            result[char] = 1;
         }
     });
     return result;
