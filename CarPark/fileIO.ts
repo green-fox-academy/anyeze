@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs')
 
 export function readFromFile(fileName: string): string {
   try {
@@ -13,14 +13,14 @@ export function writeToFile(fileName: string, content: string): void {
   if(fs.existsSync(fileName)) {
     fs.writeFileSync(fileName, content);
   } else {
-    console.log('cant write to file');
+    console.log(`Can't write to file. File doesnt exist.`);
   }
 }
 
 export function appendToFile(fileName: string, content: string): void {
   if(fs.existsSync(fileName)) {
     fs.appendFileSync(fileName, content);
-  } else {
-    console.log('cant write to file');
+ } else {
+    console.log(`Can't write to file. File doesnt exist.`);
   }
 }

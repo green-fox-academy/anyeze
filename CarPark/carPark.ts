@@ -1,80 +1,59 @@
-'use strict';
-import { Car } from './car';
-import { readFromFile, writeToFile, appendToFile } from './file-io';
+import { Car } from "./car";
+import { readFromFile, writeToFile, appendToFile } from './fileIO'
 
-class CarPark {
-  private myCars: Car[] = [];
-  addCar(car: Car): void {
-    this.myCars.push(car);
-  }
+export class CarPark {
+    cars: Car[] = [];
 
-  getMyCars(): Car[] {
-    return this.myCars;
-  }
-
-  addCarToFile(car: Car) {
-    appendToFile('cars.csv', `${car.getLicensePlate()},${car.getManucaturerYear()},${car.getTicker()}\r\n`);
-  }
-
-  removeCar(car: Car) {
-    this.myCars.splice(this.myCars.indexOf(car), 1);
-  }
-
-  removeById(id: number) {
-    this.myCars.forEach((e, i) => {
-      if (e.getId() === id) {
-        this.myCars.splice(i, 1);
-      }
-    });
-    return this.myCars;
-  }
-
-  getOldest(fileName: string): string {
-    let content = readFromFile(fileName);
-    let array = [];
-    if (content !== null) {
-      content.split('\r\n').forEach(e => {
-        array.push(e.split(','));
-      });
-
-      let index = 0;
-      let smallest = 9999;
-      array.forEach((e, i) => {
-        console.log(e);
-        if (e[1] < smallest) {
-          index = i;
-          smallest = e[1];
-        }
-      });
-      return array[index][0];
+    addCar(car: Car) {
+        this.cars.push(car);
     }
-  }
-
-  getPenalty(fileName: string) {
-    let content = readFromFile(fileName);
-    let noParkingTicket: string[] = [];
-    if (content !== null) {
-      content.split('\r\n').forEach(e => {
-        if(e.split(',')[2] === '0') {
-          noParkingTicket.push(e.split(',')[0]);
-        }
-      });
+    addCarToFile(car: Car, fileName: string) {
+        appendToFile(fileName, `\r\n${car.getLicensePlate()},${car.getManufacturerYear()},${car.getHasParkingTicket()}`);
     }
-    return noParkingTicket;
-  }
-}
 
-let myCar = new Car(12, 'ABCD-92', 1984, 1);
-let myCar1 = new Car(14, 'ABCD-92', 1984, 1);
-let myCar2 = new Car(2, 'ABCD-92', 1984, 1);
-let myCarPark = new CarPark();
-myCarPark.addCar(myCar);
-myCarPark.addCar(myCar1);
-myCarPark.addCar(myCar2);
-// console.log(myCarPark.removeCar(myCar));
-// console.log(myCarPark.removeById(2));
-// console.log(myCarPark.getMyCars());
-// myCarPark.addCarToFile(myCar);
+    removeCar(licensePlate: string, fileName: string): void {
+        this.cars.forEach((e, i) => {
+            if (e.getLicensePlate() === licensePlate) {
+                this.cars.splice(i, 1);
+            }
+        });
+        let fileContent = readFromFile(fileName);
+        if (fileContent !== null) {
+            let parkplace: string[] = fileContent.split('\r\n');
+            parkplace.forEach((line, i) => {
+                if (line.indexOf(licensePlate) !== -1) {
+                    parkplace.splice(i, 1);
+                }
+            });
+            writeToFile(fileName, parkplace.join('\r\n'));
 
-// console.log(myCarPark.getOldest('cars.csv'));
-console.log(myCarPark.getPenalty('cars.csv'));
+        }
+
+    }
+    getOldest(fileName: string): string {
+        let theFile: string = readFromFile(fileName);
+        if (theFile !== null) {
+            let evszamok: string[] = theFile.split('\r\n');
+            let carArray: Car[] = evszamok.map(line => {
+                return new Car(line.split(',')[0], parseInt(line.split(',')[1]), parseInt(line.split(',')[2]));
+            });
+            carArray.sort(function (a, b) {
+                return a.getManufacturerYear() - b.getManufacturerYear();
+            });
+            return carArray[0].getLicensePlate();
+        }
+
+    }
+    getPenalty(fileName: string) {
+        let theFile: string = readFromFile(fileName);
+        if (theFile !== null) {
+            let filecontentsplitted: string[] = theFile.split('\r\n');
+            let carList: Car[] = filecontentsplitted.map(line => {
+                return new Car(line.split(',')[0], parseInt(line.split(',')[1]), parseInt(line.split(',')[2]));
+            });
+            return carList.filter(car => {
+                car.getHasParkingTicket() === 0;
+            });
+        }
+    }
+}       

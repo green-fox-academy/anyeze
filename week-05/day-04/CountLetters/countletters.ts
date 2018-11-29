@@ -36,4 +36,4 @@ function countLetters(words: string) {
 
 console.log(countLetters('almafácskadejófácska'));
 
-export { countLetters }
+export { countLetters };

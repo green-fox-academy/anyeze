@@ -1,29 +1,23 @@
+import { readFromFile, writeToFile, appendToFile } from './fileIO'
+
 export class Car {
-  private id: number;
-  private licensePlate: string;
-  private manufacturYear: number;
-  private hasTicket: number;
-  constructor(id: number, licensePlate: string, manufacturYear: number, hasTicket: number) {
-    this.id = id;
-    this.licensePlate = licensePlate;
-    this.manufacturYear = manufacturYear;
-    this.hasTicket = hasTicket;
-  }
+    
+    protected licensePlate: string;
+    protected manufacturerYear: number;
+    protected hasParkingTicket: number;
 
-  getId(): number {
-    return this.id;
-  }
-
-  getLicensePlate(): string {
-    return this.licensePlate;
-  }
-
-  getManucaturerYear(): number {
-    return this.manufacturYear;
-  }
-
-  getTicker(): number {
-    return this.hasTicket;
-  }
-
+    constructor (licensePlate: string, manufacturerYear: number, hasParkingTicket: number){
+        this.licensePlate = licensePlate;
+        this.manufacturerYear = manufacturerYear;
+        this.hasParkingTicket = hasParkingTicket;
+    }
+    getLicensePlate(){
+        return this.licensePlate;
+    }
+    getManufacturerYear(){
+        return this.manufacturerYear;
+    }
+    getHasParkingTicket(){
+        return this.hasParkingTicket;
+    }
 }
