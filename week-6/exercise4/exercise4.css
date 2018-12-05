@@ -7,33 +7,36 @@ Cyan: Navigation links
 Yellow: Main Content
 Green: Sidebar (not main content)*/
 
-html{
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
     width: auto;
+    height: auto; 
     padding-left: 5%;
     padding-right: 5%;
 }
-body{
-    width: auto;
-    padding-left: 5%;
-    padding-right: 5%;
-}
+
 .header{
     display: flex;
     height: 80px;
-    background-color: darkmagenta;
+    background-color: rgb(192, 179, 192);
     align-items: center;
 }
 .container{
     display: flex;
     flex-direction: row;
+    width: 40%;
     margin-left: 20px;
     
 }
 .item{
     list-style: none;
-    background-color: cyan;
+    background-color: rgb(127, 78, 155);
     width:  100px;
-    height: 30px;
+    height: 40px;
     margin-left: 20px;
    
 }
@@ -56,12 +59,12 @@ body{
     height: 100%;
 }
 .green{
-    background-color:  yellow;
+    background-color:  rgba(206, 67, 231, 0.226);
     width: 75%;
     order: 1;
 }
 .yellow{
-    background-color: green;
+    background-color: rgba(128, 0, 100, 0.294);
     width: 25%;
     order: 2;
 }
