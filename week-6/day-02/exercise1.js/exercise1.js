@@ -14,20 +14,22 @@
       console.log each of them.
     </script>
    */ 
-const king = document.querySelector('.asteroid');
+/*const king = document.querySelector('.asteroid');
 console.log(king);
 
 const businessLamp = document.querySelectorAll('.asteroidBig, .asteroid b329 big');
 businessLamp.forEach(e =>{
     console.log(e);
+});*/
+
+const conceitedKing = document.querySelectorAll('.container');
+const divs = document.querySelectorAll('div');
+divs.forEach(e => {
+    alert(e.textContent);
 });
 
-const conceitedKing = document.querySelectorAll('.asteroid, .asteroid b326');
-conceitedKing.forEach(e => {
-    console.log(e)
-});
-
-const noBusiness = document.querySelectorAll('.asteroidBig, .asteroid b329 big, .asteroid');
+/*const noBusiness = document.querySelectorAll('.asteroidBig, .asteroid b329 big, .asteroid');
 noBusiness.forEach(e => {
     console.log(e);
-})
+})*/
+
