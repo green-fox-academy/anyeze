@@ -22,8 +22,8 @@ businessLamp.forEach(e =>{
     console.log(e);
 });*/
 
-const conceitedKing = document.querySelectorAll('.container');
-const divs = document.querySelectorAll('div');
+const conceitedKing = document.querySelector('.container');
+const divs = conceitedKing.querySelectorAll('div');
 divs.forEach(e => {
     alert(e.textContent);
 });
