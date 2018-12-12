@@ -10,13 +10,13 @@ xhr.onreadystatechange = () => {
             const response = JSON.parse(xhr.responseText);
             console.log(response.results);
             response.results.forEach(e => {
-                console.log(e.name)
+                /*console.log(e.name)
                 let body = document.querySelector('body');
                 let list = document.createElement('ul');
                 let li = document.createElement('li');
                 body.appendChild(list)
                 list.appendChild(li);
-                li.innerText = e.films;
+                li.innerText = e.films;*/
             });
 
         }
@@ -29,6 +29,7 @@ let body = document.querySelector('body');
 let label = document.createElement('h1');
 let inputField = document.createElement('input');
 let btn = document.createElement('button');
+let br = document.createElement('br');
 
 
 
@@ -38,6 +39,27 @@ inputField.type = "text";
 btn.innerText = "Search";
 body.appendChild(inputField);
 body.appendChild(btn);
+label.appendChild(br);
+
+btn.style.display = "inline-block";
+btn.borderRadius = '4px';
+btn.backgroundColor = "#f4511e";
+
+
+// .button {
+//     display: inline-block;
+//     border-radius: 4px;
+//     background-color: #f4511e;
+//     border: none;
+//     color: #FFFFFF;
+//     text-align: center;
+//     font-size: 28px;
+//     padding: 20px;
+//     width: 200px;
+//     transition: all 0.5s;
+//     cursor: pointer;
+//     margin: 5px;
+//   }
 
 
 
