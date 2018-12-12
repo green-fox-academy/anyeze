@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>THE BUTTON</button>
+    <h1></h1>
+    <!-- Create a simple HTML document with one button.
+If the user clicks the button 3 times, and 5 seconds is already elapsed since the page is loaded, a text should appear under the button:
+5 seconds elapsed and clicked 3 times
+If the user starts clicking before the first 5 seconds, nothing should be printed  -->
+    <script>
+        let button = document.querySelector('button');
+        let header = document.querySelector('h1');
+        let event = () => header.innerHTML = '5 seconds elapsed and clicked 3 times';
+        let count = 0;
+        let threeClick = () => { count++; 
+           if(count === 3) {
+        setTimeout(() => {                    
+               
+                console.log(event())
+            }
+        , 5000);
+}
+        }  
+    </script>
+</body>
+
+</html>
