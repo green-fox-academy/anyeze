@@ -12,16 +12,15 @@ xhr.onreadystatechange = () => {
             const response = JSON.parse(xhr.responseText);
             console.log(response.data);
             response.data.forEach(e => {
-                let body = document.querySelector('body');
+                let container = document.querySelector('div');
                 let images = document.createElement('img');
-                body.appendChild(images);
+                container.appendChild(images);
                 images.src = e.images.original_still.url;
                 images.onclick = () => {
-                images.src = e.images.downsized_medium.url;
+                    images.src = e.images.downsized_medium.url;
                 }
             });
         }
-
     }
 }
 xhr.send();
