@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <title>Login-form</title>
 </head>
 
 <body>
-    <form action="index.html" method="get">
+    <form action="index.html">
         <section>
             <p>ACCOUNT LOGIN</p>
             <div>
                 <label for="username">USERNAME</label><br>
-                <input type="text" id="username" name="username" minlength=5 autofocus required><br>
+                <input type="text" id="username" name="username" minlength="5" autofocus required><br>
             </div>
             <div class='divpassword'>
                 <label for="password">PASSWORD</label><br>
-                <input type="password" id="password" name="password" minlength=5 required>               
+                <div class="container">
+                    <input type="password" id="password-field" name="password" minlength="5" maxlength="15" required>
+                    <i id="pass-status" class="fa fa-eye" aria-hidden="true" onClick="viewPassword()"></i>
+                </div>
                 <br>
             </div>
             <div>
-                <a href="https://media1.tenor.com/images/57e5b99257ddc933c97a007325daad15/tenor.gif?itemid=5362094">Forgot Password?</a><br>
+                <a href="https://media1.tenor.com/images/57e5b99257ddc933c97a007325daad15/tenor.gif?itemid=5362094">Forgot
+                    Password?</a><br>
             </div>
         </section>
         <button type="submit">Login</button>
     </form>
+    <script src="main.js"></script>
 </body>
+
 </html>
