@@ -2,7 +2,7 @@
   "name": "anyeze",
   "version": "1.0.0",
   "description": "[git-lesson-repository](https://github.com/anyeze/git-lesson-repository)",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/green-fox-academy/anyeze#readme",
   "dependencies": {
-    "@types/node": "^10.12.5"
+    "@types/node": "^10.12.5",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
   },
   "devDependencies": {
     "tape": "^4.9.1"
