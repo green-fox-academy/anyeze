@@ -3,7 +3,7 @@
 const url = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=14615f9ac6e54bf2b264b431b36c1448&q=the+moon+landing+by+Apollo+11";
 
 const xhr = new XMLHttpRequest();
-xhr.open('GET', url, true);
+xhr.open('GET', url);
 
 xhr.onreadystatechange = () => {
 	if (xhr.readyState === XMLHttpRequest.DONE) {
