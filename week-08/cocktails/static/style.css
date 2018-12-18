@@ -1,5 +1,7 @@
 body {
     font-family: 'Courier New', Courier, monospace;
+    background-image: url(3.jpg);
+    width: 1680px;
 }
 table {
     border-collapse: collapse;
@@ -40,9 +42,7 @@ th{
 tbody tr:hover {
     background: rgba(255, 68, 0, 0.335);
 }
-body{
-    background-image: url(3.jpg);
-}
+
 html{
     color: whitesmoke;
 }
