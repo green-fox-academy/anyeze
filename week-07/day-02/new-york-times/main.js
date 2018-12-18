@@ -8,7 +8,7 @@ xhr.open('GET', url);
 xhr.onreadystatechange = () => {
 	if (xhr.readyState === XMLHttpRequest.DONE) {
 		if (xhr.status === 200) {
-			const response = JSON.parse(xhr.responseText);
+const response = JSON.parse(xhr.responseText);
 			console.log(response.response.docs);
 			response.response.docs.forEach(e => {
 				const body = document.querySelector('body');
