@@ -1,6 +1,4 @@
 const express = require('express');
-const path = require('path');
-
 const app = express();
 const PORT = 8080;
 
@@ -21,11 +19,11 @@ const multiply = (numbers) => {
   return multi;
 }
 const double = (numbers) => {
-  let double = [];
+  let result = [];
   numbers.forEach(e => {
-    double.push(e * 2);
+    result.push(e * 2);
   });
-  return double;
+  return result;
 }
 
 app.post('/arrays', (req, res) => {
@@ -33,17 +31,19 @@ app.post('/arrays', (req, res) => {
   if (what === 'sum') {
     res.json({
       "result": sum(numbers)
-    })
+    });
   } else if (what === 'multiply') {
     res.json({
       "result": multiply(numbers)
-    })
+    });
   } else if (what === 'double') {
     res.json({
       "result": double(numbers)
-    })
+    });
   } else {
-    res.json({ "error": "Please provide a number!" })
+    res.json({
+      "error": "Please provide a number!"
+    });
   }
 });
 
