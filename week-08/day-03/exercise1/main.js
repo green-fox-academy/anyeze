@@ -39,19 +39,52 @@ app.get('/greeter', (req, res) => {
     });
   }
 });
-app.get('/appenda/:word', (req, res) => { 
-  if(!req.params.word) {
+app.get('/appenda/:word', (req, res) => {
+  if (!req.params.word) {
     res.send({
       "error": "Please provide an input!"
     })
-  // } else if(req.params.word){
-  //   res.send({
-  //   "appended": req.params.word+"a",
-  //   })
-  // }
- } });
+  } else if (req.params.word) {
+    res.send({
+      "appended": req.params.word + "a",
+    })
+  }
+});
 
- app.listen(PORT, () => {
+
+const bp = require('body-parser');
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
+app.use(bp());
+
+function sum(num) {
+  let sumNum = 0;
+  for (let i = num; i >= 0; i--) {
+    sumNum += i;
+  } return sumNum;
+}
+function factor(num) {
+  let factNum = 1;
+  for (let i = 1; i <= num; i++) {
+    factNum *= i;
+  } return factNum;
+}
+app.post('/dountil/:action', (req, res) => {
+  const {action} = req.params;
+  if (action === 'sum') {
+    res.json({
+      "result": sum(req.body.until)
+    })
+  } else if (action === 'factor') {
+    res.json({ 
+      "result": factor(req.body.until)
+     })
+  } else {
+    res.json({ "error": "Please provide a number!" })
+  }
+});
+
+app.listen(PORT, () => {
   console.log(`The server is up and running on ${PORT}`);
 });
 
