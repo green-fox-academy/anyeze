@@ -2,6 +2,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-image: url(3.jpg);
     width: 1680px;
+    cursor: url("http://www.simpleimageresizer.com/_uploads/photos/30d4ceee/dinidani_80x80.png"), auto;
 }
 table {
     border-collapse: collapse;
@@ -19,7 +20,7 @@ th, td {
   }
  th, td:hover{
     color: whitesmoke;
-    cursor: url("https://crack4download.com/Content/Images/Logos/Professional-Bartender.gif"), auto;
+    cursor: url("http://www.simpleimageresizer.com/_uploads/photos/30d4ceee/dinidani_80x80.png");
  }
   a{
     font-size: 30px;
@@ -28,6 +29,7 @@ th, td {
     text-align: center;
     white-space: normal;
     margin-left: 20px;
+    cursor: url("http://www.simpleimageresizer.com/_uploads/photos/30d4ceee/dinidani_80x80.png"), auto;
 }
 td{
     font-weight: bolder; 
