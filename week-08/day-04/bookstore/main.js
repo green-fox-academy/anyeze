@@ -1,3 +1,4 @@
+'use strict'
 // dotenv module
 require('dotenv').config();
 // MySQL module
@@ -28,7 +29,7 @@ conn.connect(err => {
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
 
 // ENDPOINT WITH SQL QUERY
-const getAllEmployees = 'SELECT * FROM employees';
+const getAllEmployees = 'SELECT book_name FROM book_mast';
 
 app.get('/', (request, response) => {
   conn.query(getAllEmployees, (err, data) => {
