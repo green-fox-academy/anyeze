@@ -1,97 +1,45 @@
 'use strict'
-// dotenv module
-require('dotenv').config();
-// MySQL module
-const mysql = require('mysql');
-// Express module
 const express = require('express');
 const app = express();
+const mysql = require('mysql');
+const path = require('path');
 const PORT = 3000;
 
-// CONFIGURATION
+app.use(express.json());
+
 const conn = mysql.createConnection({
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD
+  user: "root",
+  password: "password",
+  database: "bookstore",
+  port: 3306,
+
 });
 
-// CONNECT
-conn.connect(err => {
-  if (err) {
-    console.error(err.message);
-    return;
-  }
-  console.log('Connected to database', '\n');
+app.use('/static', express.static('static'));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// SERVER START
-app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
-
-// ENDPOINT WITH SQL QUERY
-const getAllEmployees = 'SELECT book_name FROM book_mast';
-
-app.get('/', (request, response) => {
-  conn.query(getAllEmployees, (err, data) => {
+app.get('/author', (req, res) => {
+  const sql = `SELECT book_name, aut_name, cate_descrip, pub_name, book_price   
+              FROM book_mast, author, category, publisher 
+              WHERE author.aut_id = book_mast.aut_id
+              AND category.cate_id = book_mast.cate_id
+              And publisher.pub_id = book_mast.pub_id`;
+              
+  conn.query(sql, (err, data) => {
     if (err) {
-      response.status(500).send(err);
+      console.log(err.message);
+      res.status(500).json({
+        error: 'Internal server error'
+      });
+      return;
     }
-    response.status(200).send(data);
-  });
+    res.json(data);
+  })
 });
 
-//CREATE
-// const addEmployee = 'INSERT INTO employees SET ?';
-// const employee = { name: 'Máté', role: 'Mentor' };
-
-// conn.query(addEmployee, employee, (err, res) => {
-//   if(err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log(res);
-// });
-
-// UPDATE
-// const editEmployee = 'UPDATE employees SET name = ? WHERE id = ?';
-// const newValues = ['Bence', '11'];
-
-// conn.query(editEmployee, newValues, (err, res) => {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log(res);
-// });
-
-// DELETE
-// const deleteEmployee = 'DELETE FROM employees WHERE id = ?';
-// const deleteId = 11;
-
-// conn.query(deleteEmployee, deleteId, (err, res) => {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log(res);
-// });
-
-// READ
-// const findAllEmployees = 'SELECT * FROM employees';
-
-// conn.query(findAllEmployees, (err, res) => {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log('\n', res);
-// });
-
-// DISCONNECT
-// conn.end(err => {
-//   if (err) {
-//     console.log(err);
-//     return;
-//   }
-//   console.log('\n', 'Disconnected from database');
-// });
+  app.listen(PORT, () => {
+    console.log(`App is listening on port: ${PORT}`);
+  });
