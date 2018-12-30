@@ -1,39 +1,34 @@
 'use strict'
 
 const xhr = new XMLHttpRequest();
-xhr.open('GET', '/author');
+xhr.open('GET', '/books');
 xhr.onload = () => {
   if (xhr.status === 200) {
     const res = JSON.parse(xhr.responseText);
     table(res);
+    selectCategory(res);
   }
 }
 xhr.send();
 
+const div = document.querySelector('div');
 const form = document.createElement('form');
 const selectScience  = document.createElement('select');
 
 const selectCategory = (data) => {
   
   const selectTech = document.createElement('select');
-
+  
   data.forEach(e => {
-     console.log(e);
-  })
-
-
-
-
-
-
+    console.log(data)
+    const options = document.createElement('option');
+     options.textContent = e.cate_descrip;
+     selectTech.appendChild(options);
+     div.appendChild(selectTech);
+    
+})
 }
 
-
-
-
-
-
-const div = document.querySelector('div');
 const table = (data) => {
   const tr = document.createElement('tr');
   const thTitle = document.createElement('th');
@@ -56,7 +51,7 @@ const table = (data) => {
   div.appendChild(tr);
 
   data.forEach(e => {
-    console.log(e);
+  
     const tr = document.createElement('tr');
     const tdTitle = document.createElement('td');
     const tdAuth = document.createElement('td');
@@ -68,7 +63,7 @@ const table = (data) => {
     tdAuth.textContent = e.aut_name;
     tdCat.textContent = e.cate_descrip;
     tdPub.textContent = e.pub_name;
-    tdPrice.textContent = e.book_price;
+    tdPrice.textContent = e.book_price + ' $';
 
     tr.appendChild(tdTitle);
     tr.appendChild(tdAuth);
