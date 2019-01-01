@@ -77,7 +77,7 @@ p{
 #thumbnails img{
   width: 80px;
   height: 80px;
-  box-shadow: 10px 20px 28px #141414da; 
+  box-shadow: 10px 20px 18px #141414da; 
   border-radius: 20%;
   margin-left: 20px;
 }

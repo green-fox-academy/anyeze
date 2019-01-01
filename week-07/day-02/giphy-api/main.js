@@ -17,7 +17,11 @@ xhr.onreadystatechange = () => {
                 container.appendChild(images);
                 images.src = e.images.original_still.url;
                 images.onclick = () => {
-                    images.src = e.images.downsized_medium.url;
+                    if (images.src === e.images.downsized_medium.url) {
+                        images.src = e.images.original_still.url;
+                    } else {
+                        images.src = e.images.downsized_medium.url;
+                    }
                 }
             });
         }
