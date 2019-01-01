@@ -1,11 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html{
+  background-image: url('https://wallpapercave.com/wp/RsyHRBx.jpg');
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+form {
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+#container {
+  display: flex;
+}
+input{
+  width: 300px;
+  font-size: 28px;
+  padding: 15px;
+  border-radius: 4px;
+}
+#characterlist, #filmlist {
+  width: 400px;
+  height: 600px;
+  margin: 30px;
+}
+p{
+  font-size: 25px;
+  color: rgb(248, 204, 9);
+  padding: 2%;
+  font-weight: bolder;
 
-  
-.button {
-    display: inline-block;
+}
+#search {
+  display: inline-block;
     border-radius: 4px;
-    background-color: #f4511e;
+    background-color: rgba(0, 0, 0, 0.883);
     border: none;
-    color: #FFFFFF;
+    color: rgb(248, 204, 9);
     text-align: center;
     font-size: 28px;
     padding: 20px;
@@ -14,3 +50,9 @@
     cursor: pointer;
     margin: 5px;
   }
+
+h1{
+
+  color: rgb(17, 17, 17);
+  font-size: 70px;
+}
