@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Newsletter</title>
+  <style>
+    body{
+    background-color: rgb(211, 209, 209);
+}
+  form{
+    margin: 0 auto;
+    margin-top: 50px;
+    width: 300px;
+    height: 200px;
+    padding: 1em;
+    padding-top: 20px;
+    background-color: white;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 5px 12px grey;
+    align-content: center;
+    justify-content: center;
+    color: rgb(15, 14, 13);
+    font-size: 28px;
+}
+i{
+  font-weight: bolder;
+}
+label{
+    display: inline-block;
+    text-align: left;
+    width: 70px;
+    height: 20px;
+    font-size: 15px;
+    color: rgb(78, 74, 74);
+}
+input{
+    display: block;
+    font-size: 25px;
+}
+button {
+    border: none;
+    background-color: black;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    padding: 10px 22px;
+    font-size: 16px;
+    border-radius: 25px;
+    margin-top: 20px;
+    width: 150px;   
+    box-shadow: 0 0 3px 3px rgb(141, 138, 138); 
+}
+
+  
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <form>
+      <label for="name">NAME</label>
+      <input type="text" name="name" id="name" required>
+      <label for="email">EMAIL</label>
+      <input type="email" name="email" id="email" required>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+  <script src="express.js"></script>
+</body>
+
+</html>
