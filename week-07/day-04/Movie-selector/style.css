@@ -1,0 +1,41 @@
+body {
+  background: #ededed;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(17, 13, 13);
+  justify-items: center;
+  align-items: center;
+}
+form{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 450px;
+  height: 450px;
+  padding: 1em;
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 5px 12px grey;
+  background: url('https://ak6.picdn.net/shutterstock/videos/806446/thumb/1.jpg' ) no-repeat;
+  
+}
+.movie, .genre{
+  margin: 20px;
+}
+h1{
+  margin: 10px;
+  text-align: center;
+  font-size: 45px;
+}
+.selected{
+  font-size: 50px;
+  font-weight: bold;
+  color: rgb(250, 249, 249);
+  background-color: rgba(0, 0, 0, 0.596)
+}
+select{
+  width: 200px;
+  height: 50px;
+  font-size: 25px;
+}
+span{
+  font-size: 25px;
+}
