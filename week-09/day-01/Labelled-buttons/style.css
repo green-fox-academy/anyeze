@@ -1,0 +1,64 @@
+html{
+  background: rgb(27, 25, 25);
+}
+body{
+  margin-top: 50px;
+  margin-left: 50px;
+}
+button{
+  display: flex;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.966);
+  color: white;
+  padding: 0;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+}
+#first, #second{
+  display: flex;
+  position: relative;
+
+}
+
+label::before {
+  content:'';
+  width: 0; 
+  height: 0; 
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid black;
+  left: 0;
+  position: absolute;
+}
+label{
+display: none;
+}
+button:hover + label{
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+#labelegy{
+  color: white;
+  background-color: red;
+  width: 100px;
+}
+
+#labelketto{
+  color: aliceblue;
+  background-color: green;
+  width: 100px;
+}
+#btnfirst:hover{
+  color: red;
+}
+#btnsecond:hover{
+  color: green
+}
