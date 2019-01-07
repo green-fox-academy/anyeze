@@ -44,7 +44,6 @@ table{
 th, td{
   width: 100px;
   height: 40px;
-  border: 1px solid rgba(97, 96, 96, 0.87);
   padding: 20px;
 }
 thead{
