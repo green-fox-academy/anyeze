@@ -1,0 +1,57 @@
+/* table{
+  width: 900px;
+  height: 900px;
+background: linear-gradient(308deg, rgb(102, 22, 82), rgba(221, 18, 177, 0.479) 5%, rgb(84, 136, 160));
+background-size: 800% 800%;
+
+-webkit-animation: AnimationName 4s ease infinite;
+-moz-animation: AnimationName 4s ease infinite;
+animation: AnimationName 4s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+  0%{background-position:58% 0%}
+  50%{background-position:43% 100%}
+  100%{background-position:58% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:58% 0%}
+  50%{background-position:43% 100%}
+  100%{background-position:58% 0%}
+}
+@keyframes AnimationName { 
+  0%{background-position:58% 0%}
+  50%{background-position:43% 100%}
+  100%{background-position:58% 0%}
+} */
+html{
+  background-color: rgba(69, 69, 247, 0.931);
+}
+
+table{
+  width: 600px;
+  height: 600px;
+  background: rgb(235, 227, 227);
+  border-collapse: collapse;
+  border-style: hidden;
+  border-radius: 1%;
+  margin-left: 15%;
+  margin-top: 5%;
+  font-family: 'Thasadith', sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+th, td{
+  width: 100px;
+  height: 40px;
+  border: 1px solid rgba(97, 96, 96, 0.87);
+  padding: 20px;
+}
+thead{
+  background: black;
+  color: white;
+  border-bottom: 4px solid rgb(97, 96, 96);
+}
+tbody > tr:nth-child(2n-1){
+  background: rgba(185, 184, 184, 0.781);
+}
